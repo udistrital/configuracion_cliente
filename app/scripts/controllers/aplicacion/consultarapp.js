@@ -68,7 +68,7 @@ angular.module('javierApp')
       var index = $scope.gridOptions1.data.indexOf(row.entity);
 
       //Borra la aplicación de la BD
-      configuracionRequest.delete('aplicacion/', row.entity.Id)
+      configuracionRequest.delete('aplicacion', row.entity.Id)
         .then(function(response) {
           //Condicional
           if (response.data === "OK") {
