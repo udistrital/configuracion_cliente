@@ -121,7 +121,7 @@ angular.module('javierApp')
                                                   "Hijo": {"Id": $scope.menu_hijo.Id}};
 
                                 //Se realiza la petición POST, para guardar los menús asociados al perfil
-                                configuracionRequest.post('menu_opcion_padre/', json_padre)
+                                configuracionRequest.post('menu_opcion_padre', json_padre)
                                   .then(function(response){
                                         console.log(response.data);
                                 });
