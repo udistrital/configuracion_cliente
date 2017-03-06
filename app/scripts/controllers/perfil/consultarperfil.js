@@ -160,7 +160,7 @@ angular.module('javierApp')
 
                               //Cargar los nuevos menús asociados
                               //Obtiene los menús asociados a ese perfil
-                              configuracionRequest.get('http://127.0.0.1:8081/v1/menu_opcion_padre/ArbolMenus/'+$scope.prueba.Nombre+'')
+                              configuracionRequest.get('menu_opcion_padre/ArbolMenus/'+$scope.prueba.Nombre+'')
                               .then(function(response) {
                                 $scope.opciones = response.data;
                                   if ($scope.opciones === null) {
@@ -188,7 +188,7 @@ angular.module('javierApp')
                         console.log($scope.menu_x_perfil[i].Id);
 
                         //Se realiza la petición POST, para guardar los menús asociados al perfil
-                        configuracionRequest.delete('http://127.0.0.1:8081/v1/perfil_x_menu_opcion/', $scope.menu_x_perfil[i].Id)
+                        configuracionRequest.delete('perfil_x_menu_opcion', $scope.menu_x_perfil[i].Id)
                           .then(function(response){
                             console.log(response.data);
                             //Condicional
