@@ -45,7 +45,7 @@ angular.module('javierApp')
             var index = $scope.gridOptions1.data.indexOf(row.entity);
             
             //Borra el menú de la BD
-            configuracionRequest.delete('menu_opcion' + row.entity.Id)
+            configuracionRequest.delete('menu_opcion', row.entity.Id)
                .then(function(response) {
 
                      //Condicional
