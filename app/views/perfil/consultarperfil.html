@@ -10,7 +10,7 @@
         <div class="panel-footer">
             Los perfiles que se han registrado se visualizan en esta tabla.
         </div>
-    </div>    
+    </div>
 </div>
 
 
@@ -35,12 +35,14 @@
          options="treeOptions"
          on-selection="showSelected(node)"
          selected-node="node1"
-         selected-nodes="menu_x_perfil"
-         expanded-nodes="expandedNodes"
+         selected-nodes="desvincular_menus_de_perfil"
          >
 
-         Menú: {{node.Nombre}} 
-        </treecontrol>   
+         Menú: {{node.Nombre}}
+        </treecontrol>
+      <br>
+      <p>*Si desea desvincular un menú del perfil, seleccionelo y oprima el boton "Desvincular menú"</p>
+      <button type="button" class="btn btn-outline btn-danger" ng-click="borrar()">Desvincular menú</button>
 
       </div>
       ---------------------------------------------------------------------------
@@ -54,16 +56,16 @@
            selected-node="node1"
            selected-nodes="nuevo_menu_x_perfil"
            >
+           Menú: {{node.Nombre}}
+          </treecontrol>
 
-           Menú: {{node.Nombre}} 
-          </treecontrol> 
+      <br>
+      <p>*Si desea vincular un menú al perfil, seleccionelo y oprima el boton "Vincular menú"</p>
+      <button type="button" class="btn btn-outline btn-primary" ng-click="guardar_nuevos()">Vincular menu</button>
 
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-        <button type="button" class="btn btn-primary" ng-click="guardar_nuevos()">Guardar nuevos</button>
-        <!--habilitar Boton cuando se tenga la función de borrado-->
-        <!--<button type="button" class="btn btn-primary" ng-click="borrar()">Borrar</button>-->
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
       </div>
     </div>
   </div>
