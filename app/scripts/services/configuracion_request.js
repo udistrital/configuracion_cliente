@@ -9,10 +9,11 @@
  */
 angular.module('javierApp')
   .factory('configuracionRequest', function ($http) {
- 
+
    // Service logic
     // ...
     var path = "http://10.20.0.254/configuracion_api/v1/";
+    //var path = "http://127.0.0.1:8080/v1/";
     // Public API here
     return {
       get: function (tabla,params) {
@@ -25,6 +26,9 @@ angular.module('javierApp')
         return $http.put(path+tabla+"/"+id,elemento);
       },
       delete: function (tabla,id) {
+        return $http.delete(path+tabla+"/"+id);
+      },
+      deleteEspecifico: function (tabla,campo,valor) {
         return $http.delete(path+tabla+"/"+id);
       }
     };
