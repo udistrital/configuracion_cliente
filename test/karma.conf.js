@@ -40,6 +40,7 @@ module.exports = function(config) {
       'bower_components/pdfmake/build/vfs_fonts.js',
       'bower_components/ngstorage/ngStorage.js',
       'bower_components/kjur-jsrsasign/jsrsasign-all-min.js',
+      'bower_components/sweetalert2/dist/sweetalert2.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       'app/scripts/**/*.js',
