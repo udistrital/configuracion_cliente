@@ -2,7 +2,7 @@
 
         <div class="panel panel-success panel-body">
             <!--Titulo-->
-            <h1 class="panel-title page-header text-center">Registrar men&uacute;</h1><br><br>
+            <h1 class="panel-title page-header text-center">Registrar opción</h1><br><br>
             <div class="container">
               <form class="form-horizontal" name="crearMenu" novalidate>
 
@@ -13,12 +13,29 @@
                     </div>
                     <div class="col-sm-10">
 
-                      <select class="form-control"  ng-model="aplicacion" ng-options="option.Nombre for option in aplicaciones" ng-click="visualizar()"> 
-                            <option value="">--Elija la aplicaci&oacute;n a la cúal pertenecerá el men&uacute;--</option>   
+                      <select class="form-control"  ng-model="aplicacion" ng-options="option.Nombre for option in aplicaciones" ng-click="visualizar()">
+                            <option value="">--Elija la aplicaci&oacute;n a la cúal pertenecerá el men&uacute;--</option>
                       </select>
 
                     </div>
                   </div>
+
+                  <!--Seleccionar APP relacionada al menú-->
+                  <div class="col-md-12 row line">
+                    <div class="col-sm-2">
+                      <label><h5><strong>Tipo opción:</strong><h5></label>
+                      </div>
+                      <div class="col-sm-10">
+
+                        <select class="form-control"  ng-model="menu_opcion.tipo_opcion" required>
+                              <option value="">--Elija el permiso que tendrá el perfil sobre la aplicación--</option>
+                              <option value="Menú">Menú</OPTION>
+                              <option value="Botón">Botón</OPTION>
+                              <option value="Acción">Acción</OPTION>
+                        </select>
+
+                      </div>
+                    </div>
 
                 <!--Campo para el nombre del menú-->
                 <div class="col-md-12 row line">
@@ -52,7 +69,7 @@
                     </input>
                     </div>
                   </div>
-                 
+
 
                   <!--Campo para el layout del menú-->
                   <div class="col-md-12 row line">
@@ -63,7 +80,7 @@
                       <input  class="form-control" ng-model="menu.layout" placeholder="Ingrese el layout para el menú">
                     </input>
                     </div>
-                  
+
                   </div>
 
                     <!--Seleccionar menús relacionados con la aplicación-->
@@ -78,7 +95,7 @@
                              tree-model="dataForTheTree"
                              options="treeOptions"
                              selected-node="menu_padre">
-                             Menu: {{node.Nombre}} 
+                             Menu: {{node.Nombre}}
                           </treecontrol>
                       </div>
                     </div>
@@ -96,4 +113,3 @@
               </form>
             </div>
             </div>
-                  
