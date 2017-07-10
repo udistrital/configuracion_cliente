@@ -31,7 +31,7 @@ angular.module('javierApp')
       }
     };
 
-    
+
     //Función que obtiene todas las aplicaciones
     configuracionRequest.get('aplicacion', $.param({
         limit: 0
@@ -50,8 +50,8 @@ angular.module('javierApp')
           $scope.menus = {};
           $scope.dataForTheTree = [];
 
-      }else{     
-      
+      }else{
+
       $scope.dataForTheTree = [];
 
            //Carga los menus por aplicación
@@ -60,8 +60,8 @@ angular.module('javierApp')
                 if (response.data ==null) {
                   $scope.dataForTheTree = [];
                 }else{
-                  $scope.dataForTheTree = response.data;  
-                }   
+                  $scope.dataForTheTree = response.data;
+                }
             });
       }
     };
@@ -75,11 +75,14 @@ angular.module('javierApp')
                   "Descripcion":$scope.menu.descripcion,
                   "Url": $scope.menu.url,
                   "Layout":$scope.menu.layout,
-                  "Aplicacion": {"Id":$scope.aplicacion.Id}};
+                  "Aplicacion": {"Id":$scope.aplicacion.Id},
+                  "TipoOpcion": $scope.menu.tipo_opcion};
 
 
                   console.log(json);
+                  console.log($scope.dataForTheTree);
 
+              //Cuando la app no tiene opciones asociadas
               if($scope.dataForTheTree === null){
                     console.log("Entro aca 1");
 
@@ -88,12 +91,13 @@ angular.module('javierApp')
                       .then(function(response) {
 
                         alert ("Guardo exitosamente");
+                        console.log(response);
 
                         //Limpia los campos despues de hacer una inserción
                         $scope.menu = {};
                         $scope.aplicacion = {};
                         $scope.dataForTheTree = [];
-                      
+
                     });
               }
               else{
@@ -104,18 +108,18 @@ angular.module('javierApp')
                     configuracionRequest.post('menu_opcion', json)
                       .then(function(response){
 
-                            $scope.menu_hijo = response.data;               
+                            $scope.menu_hijo = response.data;
 
                             console.log($scope.menu_padre);
 
-                            //Condicional por si no se selecciona un menú padre
+                            //Condicional por si se selecciona un menú padre
                             if($scope.menu_padre!== undefined  ){
 
                                 console.log("Entro a insertar padre");
                                 console.log($scope.menu_padre.Id);
                                 console.log(response.data.Id);
 
-                            
+
                                 //Creación JSON para POST en menu_opcion_padre
                                 var json_padre = {"Padre":{"Id": $scope.menu_padre.Id},
                                                   "Hijo": {"Id": $scope.menu_hijo.Id}};
@@ -140,11 +144,9 @@ angular.module('javierApp')
       $scope.reset = function(form) {
           $scope.menu = {};
           if (form) {
-            form.$setPristine();          
+            form.$setPristine();
             form.$setUntouched();
           }
       };
 
   });
-
-
