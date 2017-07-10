@@ -25,14 +25,15 @@ angular.module('javierApp')
          { field: 'Url', cellTemplate: tmpl},
          { field: 'Layout', cellTemplate: tmpl},
          { field: 'Aplicacion.Nombre',  displayName: 'App', cellTemplate: tmpl},
-         {field: 'Acciones', 
+         { field: 'TipoOpcion', cellTemplate: tmpl},
+         {field: 'Acciones',
          cellTemplate: '<button class="btn btn-danger btn-circle" ng-click="grid.appScope.deleteRow(row)"><i class="glyphicon glyphicon-trash"></i></button>&nbsp;<button type="button" class="btn btn-success btn-circle" ng-click="grid.appScope.actualizar(row)"><i class="glyphicon glyphicon-pencil"></i></button>', maxWidth:82}
        ],
 
      };
 
     //Función que obtiene todas los menús
-    configuracionRequest.get('menu_opcion', $.param({ 
+    configuracionRequest.get('menu_opcion', $.param({
          limit: 0
        }))
        .then(function(response) {
@@ -40,10 +41,10 @@ angular.module('javierApp')
        });
 
 
-    //Función para borrar un registro de la tabla  
-    $scope.deleteRow = function(row) { 
+    //Función para borrar un registro de la tabla
+    $scope.deleteRow = function(row) {
             var index = $scope.gridOptions1.data.indexOf(row.entity);
-            
+
             //Borra el menú de la BD
             configuracionRequest.delete('menu_opcion', row.entity.Id)
                .then(function(response) {
@@ -55,7 +56,7 @@ angular.module('javierApp')
                           alert("El menu se ha borrado exitosamente");
 
                           //Función que obtiene todas las menús
-                          configuracionRequest.get('menu_opcion', $.param({ 
+                          configuracionRequest.get('menu_opcion', $.param({
                                limit: 0
                              }))
                              .then(function(response) {
@@ -64,13 +65,13 @@ angular.module('javierApp')
 
                     }else{
                           alert("No se puede eliminar el menu");
-                    } 
-                 
+                    }
+
                });
      };
 
 
-     //Función para actualizar 
+     //Función para actualizar
      $scope.actualizar = function(row) {
          //El index indica la posición en la grilla
          var index = $scope.gridOptions1.data.indexOf(row.entity);
@@ -85,14 +86,14 @@ angular.module('javierApp')
          configuracionRequest.put('menu_opcion', $scope.gridOptions1.Id, jsonActualizado )
             .then(function(response) {
               $scope.ServerResponse = response.data;
-            });                 
+            });
        };
 
        /*Función para limpiar todos los campos del formulario con el botón "Cancelar"*/
      $scope.reset = function(form) {
          $scope.perfil = {};
          if (form) {
-           form.$setPristine();          
+           form.$setPristine();
            form.$setUntouched();
 
          }
