@@ -90,12 +90,12 @@
                       </div>
                       <div class="col-sm-10" ng-show="dataForTheTree !== null">
 
-                          <!--Dibuja el arbol de los menús-->
+                          <!--Dibuja el arbol de las opciones-->
                            <treecontrol class="tree-classic"
                              tree-model="dataForTheTree"
                              options="treeOptions"
                              selected-node="menu_padre">
-                             Menu: {{node.Nombre}}
+                             {{node.TipoOpcion}}: {{node.Nombre}}
                           </treecontrol>
                       </div>
                     </div>
