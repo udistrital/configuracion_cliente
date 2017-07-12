@@ -21,11 +21,11 @@ angular.module('javierApp')
        columnDefs: [
          //{ field: 'Id',  enableCellEdit: false, maxWidth:50 },
          { field: 'Nombre', cellTemplate: tmpl},
-         { field: 'Descripcion', cellTemplate: tmpl},
+         { field: 'Descripcion', displayName: 'Descripción', cellTemplate: tmpl},
          { field: 'Url', cellTemplate: tmpl},
          { field: 'Layout', cellTemplate: tmpl},
          { field: 'Aplicacion.Nombre',  displayName: 'App', cellTemplate: tmpl},
-         { field: 'TipoOpcion', cellTemplate: tmpl},
+         { field: 'TipoOpcion', displayName: 'Tipo Opción', cellTemplate: tmpl},
          {field: 'Acciones',
          cellTemplate: '<button class="btn btn-danger btn-circle" ng-click="grid.appScope.deleteRow(row)"><i class="glyphicon glyphicon-trash"></i></button>&nbsp;<button type="button" class="btn btn-success btn-circle" ng-click="grid.appScope.actualizar(row)"><i class="glyphicon glyphicon-pencil"></i></button>', maxWidth:82}
        ],
