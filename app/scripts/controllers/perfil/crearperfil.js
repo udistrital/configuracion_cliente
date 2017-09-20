@@ -9,7 +9,7 @@
  */
 angular.module('javierApp')
   .controller('CrearperfilCtrl', function (configuracionRequest, $scope, $mdDialog) {
-  		  	
+
   		  	//Estructuras vacias que son llenadas al realizar el GET
   		  	$scope.aplicacion={};
   		  	$scope.menus = {};
@@ -28,7 +28,7 @@ angular.module('javierApp')
   					        label: "a6",
   					        labelSelected: "a8"
   					    }
-  					}; 
+  					};
 
             console.log("Ya entro");
 
@@ -50,7 +50,7 @@ angular.module('javierApp')
 
   		    	}else{
 
-  		    		//Variable que contiene los menús 
+  		    		//Variable que contiene los menús
   					  $scope.dataForTheTree = [];
 
     					//Carga los menus por aplicación
@@ -66,16 +66,16 @@ angular.module('javierApp')
   			  $scope.confirmar = function(){
   			    var json = {};
   			    json.Nombre = $scope.perfil.nombre;
-  			    json.Permiso = $scope.perfil.permiso
+  			    //json.Permiso = $scope.perfil.permiso
   			    json.Aplicacion = $scope.aplicacion;
-  			     
+
   			    configuracionRequest.post('perfil',json)
   				    .then(function(response){
-  				    	
+
   				    	//For para realizar el post a la tabla perfil_x_menu_opcion
   				    	for(var i = 0; i < $scope.menu_x_perfil.length; i++){
 
-  				    		//Cambio de menus 
+  				    		//Cambio de menus
   				    		//console.log($scope.menu_x_perfil[i] +"este es el arreglo");
 
   				    		//Se realiza la petición POST, para guardar los menús asociados al perfil
@@ -85,22 +85,22 @@ angular.module('javierApp')
   				    				alert("Los menús asociados al perfil, se han guardado satisfactoriamente");
   				    		});
 
-  				    	} 		
+  				    	}
 
   				          alert ("Guardo exitosamente");
   				          //Limpia los campos despues de hacer una inserción
   				          $scope.perfil = {};
-  				          $scope.aplicacion = {}; 
-  				          $scope.menus = {}; 
-  				          $scope.menu_x_perfil = []; 
-  				          $scope.dataForTheTree = []; 
+  				          $scope.aplicacion = {};
+  				          $scope.menus = {};
+  				          $scope.menu_x_perfil = [];
+  				          $scope.dataForTheTree = [];
 
   				      });
   				    }
 
 
 
-  				//Función para actualizar 
+  				//Función para actualizar
   		      	$scope.actualizar = function(row) {
   		          //El index indica la posición en la grilla
   		          var index = $scope.gridOptions1.data.indexOf(row.entity);
@@ -115,7 +115,7 @@ angular.module('javierApp')
   		          		.success(function (data, status, headers) {
   		              		$scope.ServerResponse = data;
   		          })
-  		                  
+
   		        };
 
 
@@ -123,7 +123,7 @@ angular.module('javierApp')
   		   		$scope.reset = function(form) {
   		          $scope.perfil = {};
   		          if (form) {
-  		            form.$setPristine();          
+  		            form.$setPristine();
   		            form.$setUntouched();
   		            $scope.dataForTheTree = [];
   		            $scope.menus ={};

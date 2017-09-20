@@ -42,10 +42,6 @@ angular.module('javierApp')
           cellTemplate: tmpl
         },
         {
-          field: 'Permiso',
-          cellTemplate: tmpl
-        },
-        {
           field: 'Aplicacion.Nombre',
           displayName: 'Aplicación',
           enableCellEdit: false,

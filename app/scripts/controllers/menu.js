@@ -12,12 +12,12 @@ angular.module('javierApp')
     $scope.menu_service = [];
 
     $http.get('http://10.20.0.254/configuracion_api/v1/menu_opcion_padre/ArbolMenus/Administrador configuración')
-       .then(function(response) {      
+       .then(function(response) {
           $scope.menu_service = response.data;
           recorrerArbol($scope.menu_service, "");
           update_url();
     });
-    
+
     var recorrerArbol = function(item, padre) {
       var padres = "";
       for (var i = 0; i < item.length; i++) {
@@ -33,7 +33,7 @@ angular.module('javierApp')
       }
       return padres;
     };
-    
+
     var update_url = function() {
       $scope.breadcrumb = [''];
       for (var i = 0; i < paths.length; i++) {
@@ -43,7 +43,7 @@ angular.module('javierApp')
           $scope.breadcrumb = [''];
         }
       }
-    }    
+    }
 
     $scope.$on('$routeChangeStart', function(next, current) {
       $scope.actual = $location.path();
