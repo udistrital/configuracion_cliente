@@ -118,7 +118,7 @@ angular.module('javierApp')
       //Variable que contiene todo el objeto del perfil
       $scope.prueba = row.entity;
       //Obtiene los menús asociados a ese perfil
-      configuracionRequest.get('menu_opcion_padre/ArbolMenus/' + row.entity.Nombre + '')
+      configuracionRequest.get('menu_opcion_padre/ArbolMenus/' + row.entity.Nombre + '/' + row.entity.Aplicacion.Nombre)
         .then(function(response) {
           $scope.opciones = response.data;
           if ($scope.opciones === null) {
