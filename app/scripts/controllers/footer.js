@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('javierApp')
+angular.module('configuracionApp')
   .controller('footerCtrl', function($scope) {
     //var ctrl = this;
     $scope.enlaces_universitarios = [{

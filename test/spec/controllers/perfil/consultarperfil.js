@@ -3,7 +3,7 @@
 describe('Controller: PerfilConsultarperfilCtrl', function () {
 
   // load the controller's module
-  beforeEach(module('javierApp'));
+  beforeEach(module('configuracionApp'));
 
   var PerfilConsultarperfilCtrl,
     scope;

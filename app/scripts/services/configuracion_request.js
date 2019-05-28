@@ -2,12 +2,12 @@
 
 /**
  * @ngdoc service
- * @name javierApp.configuracionRequest
+ * @name configuracionApp.configuracionRequest
  * @description
  * # configuracionRequest
- * Factory in the javierApp.
+ * Factory in the configuracionApp.
  */
-angular.module('javierApp')
+angular.module('configuracionApp')
   .factory('configuracionRequest', function ($http) {
 
    // Service logic

@@ -3,7 +3,7 @@
 describe('Controller: ParametroConsultarparametroCtrl', function () {
 
   // load the controller's module
-  beforeEach(module('javierApp'));
+  beforeEach(module('configuracionApp'));
 
   var ParametroConsultarparametroCtrl,
     scope;

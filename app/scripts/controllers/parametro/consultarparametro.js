@@ -2,12 +2,12 @@
 
 /**
  * @ngdoc function
- * @name javierApp.controller:ConsultarparametroCtrl
+ * @name configuracionApp.controller:ConsultarparametroCtrl
  * @description
  * # ConsultarparametroCtrl
- * Controller of the javierApp
+ * Controller of the configuracionApp
  */
-angular.module('javierApp')
+angular.module('configuracionApp')
   .controller('ConsultarparametroCtrl', function ($scope, configuracionRequest) {
  		
  		  //Variable de template que permite la edición de las filas de acuerdo a la condición ng-if

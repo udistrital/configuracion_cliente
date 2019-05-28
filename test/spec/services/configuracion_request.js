@@ -3,7 +3,7 @@
 describe('Service: configuracionRequest', function () {
 
   // load the service's module
-  beforeEach(module('javierApp'));
+  beforeEach(module('configuracionApp'));
 
   // instantiate service
   var configuracionRequest;

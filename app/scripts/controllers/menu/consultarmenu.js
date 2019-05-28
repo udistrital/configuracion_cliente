@@ -2,12 +2,12 @@
 
 /**
  * @ngdoc function
- * @name javierApp.controller:ConsultarmenuCtrl
+ * @name configuracionApp.controller:ConsultarmenuCtrl
  * @description
  * # ConsultarmenuCtrl
- * Controller of the javierApp
+ * Controller of the configuracionApp
  */
-angular.module('javierApp')
+angular.module('configuracionApp')
   .controller('ConsultarmenuCtrl', function ($scope, configuracionRequest) {
    //Variable de template que permite la edición de las filas de acuerdo a la condición ng-if
    var tmpl = '<div ng-if="!row.entity.editable">{{COL_FIELD}}</div><div ng-if="row.entity.editable"><input ng-model="MODEL_COL_FIELD"</div>';

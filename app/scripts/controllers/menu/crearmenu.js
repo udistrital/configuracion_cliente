@@ -2,12 +2,12 @@
 
 /**
  * @ngdoc function
- * @name javierApp.controller:CrearappCtrl
+ * @name configuracionApp.controller:CrearappCtrl
  * @description
  * # CrearappCtrl
- * Controller of the javierApp
+ * Controller of the configuracionApp
  */
-angular.module('javierApp')
+angular.module('configuracionApp')
   .controller('CrearmenuCtrl', function ($scope, configuracionRequest) {
 
     //Estructuras vacias que son llenadas al realizar el GET

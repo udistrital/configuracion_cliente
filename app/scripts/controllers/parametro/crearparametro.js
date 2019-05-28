@@ -2,12 +2,12 @@
 
 /**
  * @ngdoc function
- * @name javierApp.controller:CrearparametroCtrl
+ * @name configuracionApp.controller:CrearparametroCtrl
  * @description
  * # CrearparametroCtrl
- * Controller of the javierApp
+ * Controller of the configuracionApp
  */
-angular.module('javierApp')
+angular.module('configuracionApp')
   .controller('CrearparametroCtrl', function ($scope, configuracionRequest) {
 
     $scope.aplicaciones = {};

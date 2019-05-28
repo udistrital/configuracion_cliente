@@ -3,7 +3,7 @@
 describe('Controller: AplicacionConsultarappCtrl', function () {
 
   // load the controller's module
-  beforeEach(module('javierApp'));
+  beforeEach(module('configuracionApp'));
 
   var AplicacionConsultarappCtrl,
     scope;

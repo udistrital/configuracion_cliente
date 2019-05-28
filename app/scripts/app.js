@@ -2,31 +2,47 @@
 
 /**
  * @ngdoc overview
- * @name javierApp
+ * @name configuracionApp
  * @description
- * # javierApp
+ * # configuracionApp
  *
  * Main module of the application.
  */
 angular
-  .module('javierApp', [
-    'ngAnimate',
-    'ngCookies',
-    'ngResource',
-    'ngRoute',
-    'ngSanitize',
-    'ngTouch',
-    'afOAuth2',
-    'treeControl',
-    'ngMaterial',
-    'ui.grid',
-    'ui.grid.edit',
-    'ui.grid.rowEdit',
-    'ui.grid.cellNav',
-    'ui.grid.treeView',
-    'ui.grid.selection',
-    'ui.grid.exporter',
-    'ngStorage'
+  .module('configuracionApp', [
+         // Librerias
+         'ngCookies',
+         'angular-loading-bar',
+         'angular-md5',
+         'ngAnimate',
+         'ngCookies',
+         'ngMessages',
+         'ngResource',
+         'ngRoute',
+         'treeControl',
+         'ngMaterial',
+         'ui.grid',
+         'ui.grid.edit',
+         'ui.grid.rowEdit',
+         'ui.grid.cellNav',
+         'ui.grid.treeView',
+         'ui.grid.selection',
+         'ui.grid.pagination',
+         'ui.grid.exporter',
+         'ui.grid.autoResize',
+         'ngStorage',
+         'ngWebSocket',
+         'angularMoment',
+         'ui.utils.masks',
+         'pascalprecht.translate',
+         'nvd3',
+         'ui.grid.expandable',
+         'ui.grid.pinning',
+         'ui.knob',
+         'file-model',
+         'angularBootstrapFileinput',
+         // Servicios
+
   ])
     .config(['$locationProvider','$routeProvider', function($locationProvider, $routeProvider) {
       $locationProvider.hashPrefix("");

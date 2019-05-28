@@ -2,12 +2,12 @@
 
 /**
  * @ngdoc function
- * @name javierApp.controller:CrearperfilCtrl
+ * @name configuracionApp.controller:CrearperfilCtrl
  * @description
  * # CrearperfilCtrl
- * Controller of the javierApp
+ * Controller of the configuracionApp
  */
-angular.module('javierApp')
+angular.module('configuracionApp')
   .controller('CrearperfilCtrl', function (configuracionRequest, $scope, $mdDialog) {
 
   		  	//Estructuras vacias que son llenadas al realizar el GET
