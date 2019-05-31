@@ -248,7 +248,6 @@ angular.module('configuracionApp')
     $scope.toggleLeft = buildToggler('left');
     $scope.toggleRight = buildToggler('right');
 
-    //Pendiente por definir json del menu
     (function($) {
         $(document).ready(function() {
             $('ul.dropdown-menu [data-toggle=dropdown]').on('click', function(event) {

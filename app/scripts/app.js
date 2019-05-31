@@ -52,6 +52,11 @@ angular
         controller: 'MainCtrl',
         controllerAs: 'main'
       })
+      .when('/notificaciones', {
+        templateUrl: 'views/notificaciones.html',
+        controller: 'NotificacionesCtrl',
+        controllerAs: 'notificaciones'
+      })
       .when('/about', {
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl',

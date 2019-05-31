@@ -153,8 +153,22 @@ angular.module('configuracionApp')
         valid = false;
       }
       return valid;
+    },
+    getRoles: function () {
+      var roles = [];
+      var payload = JSON.parse(atob(window.localStorage.getItem('id_token').split(".")[1]));
+      angular.forEach(payload.role, function (data) {
+          if (data.split("/")[0] !== null && !angular.isUndefined(data.split("/")[0])) {
+              roles.push(data.split("/")[0]);
+          }
+      });
+      return roles;
+    }, 
+    getPayload(){
+      return JSON.parse(atob(window.localStorage.getItem('id_token').split(".")[1]));
     }
   };
+  
   service.setExpiresAt();
   service.timer();
 return service;

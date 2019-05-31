@@ -8,10 +8,20 @@
  * Factory in the configuracionApp.
  */
 angular.module('configuracionApp')
-.factory('notificacion', function($websocket) {
-  var dataStream = $websocket(); //"ws://localhost:8080/register?id=2&profile=admin"
+.factory('notificacion', function($websocket, CONF, token_service) {
+    var perfil = [];
+    var id = "";
+    if(token_service.live_token()){
+            perfil = token_service.getRoles();
+            id = token_service.getPayload().sub;
+    }
+    debugger;
+    var dataStream = $websocket(CONF.GENERAL.NOTIFICACION_WS + "?id=" + id + "&profiles="+ perfil);
+
+  //var dataStream = $websocket('ws://pruebasapi.intranetoas.udistrital.edu.co:8116/ws/join?id=utest02&profiles=ADMIN_CAMPUS'); //"ws://localhost:8080/register?id=2&profile=admin"
   var log = [];
   dataStream.onMessage(function(message) {
+      console.log(message);
       log.unshift(JSON.parse(message.data));
   });
 
